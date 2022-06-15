@@ -1,0 +1,139 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.app {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    background-color: gray;
+}
+
+.bg-dark {
+    background-color: black !important;
+}
+
+.navbar {
+    background-color: white;
+    color: black;
+    display: flex;
+    z-index: 10;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.navbar-brand {
+    cursor: pointer;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.navbar-image {
+    height: 70px;
+    width: auto;
+    margin-left: 10px;
+}
+
+.custom-table {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex-direction: column;
+    max-height: 300px !important;
+    
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 600px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.my-custom-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.navbar-text {
+    font-family: arial;
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.body-main {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    margin-top: 100px;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+}
+
+.body-main-table-box {
+    width: max-content;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.body-main-table-box-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: brown;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    width: 100%;
+    font-size: 35px;
+}
+
+.body-main-table-box-body {
+    background-color: lightcoral;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-button {
+    background-color: lightcoral;
+    border-radius: 0 10px 0 0;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.header-button:hover {
+    color: lightcoral;
+    background-color: white;
+}
+
+.body-main-table-box-body-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
