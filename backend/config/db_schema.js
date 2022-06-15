@@ -12,10 +12,6 @@ const schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    group: {
-        type: String,
-        required: true
-    },
     variant: {
         type: String,
         required: true

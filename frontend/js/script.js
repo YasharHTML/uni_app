@@ -31,7 +31,6 @@ const sendAjaxRequest = async () => {
                 <td>${data[i]._id}</td>
                 <td>${data[i].name}</td>
                 <td>${data[i].surname}</td>
-                <td>${data[i].group}</td>
                 <td>${data[i].variant}</td>
                 <td>${data[i].score}</td>
                 <td><button class='btn btn-primary' onclick='loadText(${data[i]._id})'>Get File</button></td>
@@ -42,7 +41,6 @@ const sendAjaxRequest = async () => {
             <tr class="secret-element">
                 <th scope="row">${i + 1}</th>
                 <td>${data[i]._id}</td>
-                <td>Hidden</td>
                 <td>Hidden</td>
                 <td>Hidden</td>
                 <td>${data[i].variant}</td>

@@ -8,14 +8,13 @@ connectMongo();
 
 schema.plugin(AutoIncrement, { id: 'order_seq', inc_field: '_id' });
 
-const createPerson = async (name, surname, group, variant, score) => {
+const createPerson = async (name, surname, group, score) => {
     const model = new mongoose.model('students', schema);
 
     let student = new model({
         name: name,
         surname: surname,
         group: group,
-        variant: variant,
         score: score,
     });
     return (await student.save())._id;

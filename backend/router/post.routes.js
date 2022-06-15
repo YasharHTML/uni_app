@@ -18,7 +18,6 @@ postRouter.post("/password_check", (req, res) => {
 
 postRouter.post("/create_user", async (request, response) => {
     var images = new Array();
-    console.log("fuck", request.files);
     if (request.files) {
         var file = request.files.file;
         images = "/" + file.name;
@@ -28,7 +27,6 @@ postRouter.post("/create_user", async (request, response) => {
             data[0],
             data[1],
             data[2].length === 1 ? `KT-0${data[2]}` : `KT-${data[2]}`,
-            data[3],
             0
         );
         file.mv(path.join(__dirname + "/../../data/") + `${_id}.zip`, (err) => {
