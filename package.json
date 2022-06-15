@@ -4,6 +4,8 @@
   "description": "University app",
   "main": "index.js",
   "scripts": {
+    "build-windows": "npm install && npm install -g nodemon",
+    "build-linux": "npm install && sudo npm install -g nodemon",
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
