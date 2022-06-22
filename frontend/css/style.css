@@ -3,7 +3,15 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .app {
@@ -48,7 +56,6 @@ body {
     overflow-x: hidden;
     flex-direction: column;
     max-height: 300px !important;
-    
 }
 
 .my-custom-scrollbar {
@@ -66,8 +73,6 @@ body {
 .my-custom-scrollbar::-webkit-scrollbar {
     display: none;
 }
-
-
 
 .navbar-text {
     font-family: arial;

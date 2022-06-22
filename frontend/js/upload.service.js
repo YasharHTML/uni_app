@@ -8,13 +8,18 @@ const uploadData = () => {
         data: formData,
         processData: false,
         contentType: false,
-        success: function (data) {
+        success: function(data) {
             console.log(data);
         }
     });
 
 }
 
+const getData = () => {
+    const e = document.getElementById("text");
+    window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname.split("/").slice(0, 4).join("/") + "/get_file_by_variant/" + e.options[e.selectedIndex].text
+
+}
 
 const navigateToAddStudent = () => {
     let newPathList = window.location.pathname.split("/").slice(0, 4).join("/");

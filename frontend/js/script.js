@@ -1,31 +1,29 @@
-const authenticate = async () => {
+const authenticate = async() => {
     let password = prompt("Enter your password to authenticate");
-    await $.ajax(
-        {
-            url: window.location.href + "/password_check",
-            type: 'POST',
-            data: {
-                password
-            },
-            success: function (data) {
-                sendAjaxRequest();
-            },
-            error: function (data) {
-                authenticate();
-            }
+    await $.ajax({
+        url: window.location.href + "/password_check",
+        type: 'POST',
+        data: {
+            password
+        },
+        success: function(data) {
+            sendAjaxRequest();
+        },
+        error: function(data) {
+            authenticate();
         }
-    )
+    })
 }
 
-const sendAjaxRequest = async () => {
+const sendAjaxRequest = async() => {
     await $.ajax({
         url: window.location.href + "/get_all",
         type: 'GET',
-        success: function (data) {
+        success: function(data) {
             for (let i = 0; i < data.length; i++) {
                 console.log(window.location.pathname.substring(window.location.pathname.lastIndexOf("/")))
-                if (window.location.pathname.substring(window.location.pathname.lastIndexOf("/")) == "/qa") {
-                    document.getElementById('enter_here').innerHTML += `
+
+                document.getElementById('enter_here').innerHTML += `
             <tr class="secret-element">
                 <th scope="row">${i + 1}</th>
                 <td>${data[i]._id}</td>
@@ -36,19 +34,7 @@ const sendAjaxRequest = async () => {
                 <td><button class='btn btn-primary' onclick='loadText(${data[i]._id})'>Get File</button></td>
                 <td><button class='btn btn-primary' onclick='assessStudent(${data[i]._id})'>Assess Student</button></td>
             </tr>`;
-                } else {
-                    document.getElementById('enter_here').innerHTML += `
-            <tr class="secret-element">
-                <th scope="row">${i + 1}</th>
-                <td>${data[i]._id}</td>
-                <td>Hidden</td>
-                <td>Hidden</td>
-                <td>${data[i].variant}</td>
-                <td>${data[i].score}</td>
-                <td><button class='btn btn-primary' onclick='loadText(${data[i]._id})'>Get File</button></td>
-                <td><button class='btn btn-primary' onclick='assessStudent(${data[i]._id})'>Assess Student</button></td>
-            </tr>`;
-                }
+
             };
         }
     });
@@ -88,4 +74,3 @@ window.onload = () => {
         sendAjaxRequest();
     }
 }
-

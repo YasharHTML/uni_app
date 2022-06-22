@@ -3,12 +3,12 @@ const sendStudentData = () => {
     formData.append('file', $('#file')[0].files[0]);
     // ajax request
     $.ajax({
-        url: window.location.protocol + "//" + window.location.host + window.location.pathname.split("/").slice(0, 4).join("/") + "/upload_file",
+        url: window.location.protocol + "//" + window.location.host + window.location.pathname.split("/").slice(0, 4).join("/") + "/create_user",
         type: 'POST',
         data: formData,
         processData: false,
         contentType: false,
-        success: function (data) {
+        success: function(data) {
             console.log(data);
         }
     });
